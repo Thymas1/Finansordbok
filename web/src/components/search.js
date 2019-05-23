@@ -24,17 +24,34 @@ border-radius: 3px;
 
 
 
-function Search(){
+class Search extends Component {
 
+  state = {
+    query: '',
+  }
 
-  return(
+  handleInputChange = () => {
+    this.setState({
+      query: this.search.value
+    })
+  }
+
+  render() {
+    return (
 
       <Wrapper>
         <H2>Search for your word here:</H2>
-        <Input type="search" results={5} placeholder="search..." className={styles.input}/>
-       <Button primary>primary</Button>
+        <Input type="search"
+               placeholder="search..."
+               className={styles.input}
+               ref={input => this.search = input}
+               onChange={this.handleInputChange}
+        />
+        <Button primary>Search</Button>
+        <p>{this.state.query}</p>
       </Wrapper>
 
-  )
+    )
+  }
 }
 export default Search;

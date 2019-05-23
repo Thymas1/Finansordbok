@@ -8,9 +8,11 @@
 }
 
 .mainImage {
+  margin-left: 10%;
   display: block;
   position: relative;
   background: var(--color-very-light-gray);
+  width: 80%;
   padding-bottom: calc(9 / 16 * 35%);
 
   @nest & img {

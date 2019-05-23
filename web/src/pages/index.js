@@ -11,7 +11,7 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Search from '../components/search'
-import { Title, H2 } from '../components/Title'
+import { Title } from '../components/Title'
 
 
 export const query = graphql`
@@ -99,7 +99,6 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
-        <H2>Search for your word here </H2>
       <Search/>
         <Title>Welcome to {site.title}</Title>
         {postNodes && (

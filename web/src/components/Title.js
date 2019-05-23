@@ -6,9 +6,11 @@ import React from "react"
   text-allign: center;
   color: palevioletred;
   `;
-  const Wrapper = styled.section`
-  padding:4em;
-  background: papayawhip;
+
+const H2 = styled.h2`
+  font-size: 1em;
+  text.allign: center;
+  color: palevioletred;
   `;
 
-export default Title;
+export  {Title, H2};

@@ -11,6 +11,8 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Search from '../components/search'
+import { Title, H2 } from '../components/Title'
+
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -97,8 +99,9 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
+        <H2>Search for your word here </H2>
       <Search/>
-        <h1>Welcome to {site.title}</h1>
+        <Title>Welcome to {site.title}</Title>
         {postNodes && (
           <BlogPostPreviewList
             title="Latest added words"

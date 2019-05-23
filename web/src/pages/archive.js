@@ -6,6 +6,8 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import Search from '../components/search'
+
 
 import {responsiveTitle1} from '../components/typography.module.css'
 
@@ -48,6 +50,7 @@ const ArchivePage = props => {
     <Layout>
       <SEO title='Archive' />
       <Container>
+        <Search/>
         <h1 className={responsiveTitle1}>Archive</h1>
         {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
       </Container>

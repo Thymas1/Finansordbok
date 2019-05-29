@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f936dbc9-18fe-4b71-ad0f-d52b2b69a89c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/web/src/pages/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/Title.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/Title.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/archive.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/archive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/pages/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/test.js" afterDir="false" />
-    </list>
+    <list default="true" id="f936dbc9-18fe-4b71-ad0f-d52b2b69a89c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -46,11 +38,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/pages/search.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="now.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/now.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -111,6 +112,7 @@
         <option value="$PROJECT_DIR$/web/src/pages/test.js" />
         <option value="$PROJECT_DIR$/web/src/pages/search.js" />
         <option value="$PROJECT_DIR$/web/src/components/search.js" />
+        <option value="$PROJECT_DIR$/now.json" />
       </list>
     </option>
   </component>
@@ -152,31 +154,6 @@
             <path>
               <item name="Finansordbok" type="b2602c69:ProjectViewProjectNode" />
               <item name="Finansordbok" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Finansordbok" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finansordbok" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Finansordbok" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finansordbok" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Finansordbok" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finansordbok" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Finansordbok" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finansordbok" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,12 +199,12 @@
       <workItem from="1558513476368" duration="2974000" />
       <workItem from="1558518831871" duration="14756000" />
       <workItem from="1558598716962" duration="18552000" />
-      <workItem from="1559111054794" duration="12367000" />
+      <workItem from="1559111054794" duration="12618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48649000" />
+    <option name="totallyTimeSpent" value="48900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1306" height="1407" extended-state="0" />
@@ -374,23 +351,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/pages/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/components/blog-post.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/components/search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
@@ -729,6 +689,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/now.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>

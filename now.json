@@ -3,9 +3,9 @@
   "name": "Finansordbok",
   "builds": [
     {
-      "src": "package.json",
+      "src": "web/package.json",
       "use": "@now/static-build",
-      "config": { "distDir": "public" }
+      "config": { "distDir": "web/public" }
     }
   ]
 }

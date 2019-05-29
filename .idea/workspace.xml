@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f936dbc9-18fe-4b71-ad0f-d52b2b69a89c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/now.json" beforeDir="false" afterPath="$PROJECT_DIR$/now.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/now.json" beforeDir="false" afterPath="$PROJECT_DIR$/now.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,8 +52,8 @@
       <file leaf-file-name="now.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/now.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="36" />
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -114,6 +114,7 @@
         <option value="$PROJECT_DIR$/web/src/pages/test.js" />
         <option value="$PROJECT_DIR$/web/src/pages/search.js" />
         <option value="$PROJECT_DIR$/web/src/components/search.js" />
+        <option value="$PROJECT_DIR$/web/now.json" />
         <option value="$PROJECT_DIR$/now.json" />
       </list>
     </option>
@@ -162,19 +163,6 @@
               <item name="Finansordbok" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Finansordbok" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finansordbok" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Finansordbok" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finansordbok" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -219,15 +207,15 @@
       <workItem from="1558513476368" duration="2974000" />
       <workItem from="1558518831871" duration="14756000" />
       <workItem from="1558598716962" duration="18552000" />
-      <workItem from="1559111054794" duration="13521000" />
+      <workItem from="1559111054794" duration="13766000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49803000" />
+    <option name="totallyTimeSpent" value="50048000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1306" height="1407" extended-state="0" />
+    <frame x="1165" y="0" width="1306" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24763407" />
@@ -714,8 +702,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/now.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="36" />
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>

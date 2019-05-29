@@ -9,7 +9,8 @@
     "dev": "npm run clean-cache && gatsby develop",
     "lint": "eslint .",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "now-build": "npm run build"
   },
   "devDependencies": {
     "@sanity/block-content-to-react": "^2.0.6",

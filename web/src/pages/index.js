@@ -10,7 +10,6 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Search from '../components/search'
 import { Title } from '../components/Title'
 
 
@@ -99,7 +98,6 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
-      <Search/>
         <Title>Welcome to {site.title}</Title>
         {postNodes && (
           <BlogPostPreviewList

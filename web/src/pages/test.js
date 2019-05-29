@@ -9,6 +9,9 @@ import ShowSearch from '../components/Show-search'
 import Search from '../components/search'
 
 
+
+
+
 import {responsiveTitle1} from '../components/typography.module.css'
 
 export const query = graphql`
@@ -34,6 +37,8 @@ export const query = graphql`
 `
 
 
+
+
 const Testpage = props => {
   const {data, errors} = props
 
@@ -52,7 +57,7 @@ const Testpage = props => {
       <Container>
         <Search/>
         <h1 className={responsiveTitle1}>Archive</h1>
-        {testNodes && testNodes.length > 0 && <ShowSearch nodes={testNodes} />}
+        {testNodes && testNodes.length > 0 && <ShowSearch nodes={testNodes}/>}
       </Container>
     </Layout>
   )

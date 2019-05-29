@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f936dbc9-18fe-4b71-ad0f-d52b2b69a89c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/web/now.json" beforeDir="false" afterPath="$PROJECT_DIR$/now.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/now.json" beforeDir="false" afterPath="$PROJECT_DIR$/now.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -182,6 +182,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\thoma\WebstormProjects\finansord\Finansordbok" />
+      <recent name="C:\Users\thoma\WebstormProjects\finansord\Finansordbok\web" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -207,12 +213,12 @@
       <workItem from="1558513476368" duration="2974000" />
       <workItem from="1558518831871" duration="14756000" />
       <workItem from="1558598716962" duration="18552000" />
-      <workItem from="1559111054794" duration="13766000" />
+      <workItem from="1559111054794" duration="14127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50048000" />
+    <option name="totallyTimeSpent" value="50409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1165" y="0" width="1306" height="1407" extended-state="0" />

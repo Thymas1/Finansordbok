@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {graphql} from 'gatsby'
 import {mapEdgesToNodes} from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
@@ -7,6 +7,7 @@ import Container from '../components/container'
 import SEO from '../components/seo'
 import ShowSearch from '../components/Show-search'
 import Search from '../components/search'
+import Example from "../components/nySok"
 
 
 
@@ -14,10 +15,11 @@ import Search from '../components/search'
 
 import {responsiveTitle1} from '../components/typography.module.css'
 
+
 export const query = graphql`
   query SearchQuery {
   sok: allSanityPost(filter: {
-    title:{ eq: "JTTA"}
+    title:{ eq: "PEP"}
   }) {
       edges {
         node {
@@ -40,30 +42,30 @@ export const query = graphql`
 `
 
 
+ //FIND UT HVORDAN MAN KAN PASE VALUE FRA INPUT I NYSOK TIL QUERY OG SØK ER FERDIG!
 
+  const Searchpage = props => {
+    const { data, errors } = props
 
-const Searchpage = props => {
-  const {data, errors} = props
+    if (errors) {
+      return (
+        <div>
+          <GraphQLErrorList errors={errors}/>
+        </div>
+      )
+    }
+    const testNodes = data && data.sok && mapEdgesToNodes(data.sok)
 
-  if (errors) {
     return (
-      <div>
-        <GraphQLErrorList errors={errors}/>
-      </div>
+      <Layout>
+        <SEO title='Test'/>
+        <Container>
+          <Search/>
+          <Example/>
+          <h1 className={responsiveTitle1}>Archive</h1>
+          {testNodes && testNodes.length > 0 && <ShowSearch nodes={testNodes}/>}
+        </Container>
+      </Layout>
     )
   }
-  const testNodes = data && data.sok && mapEdgesToNodes(data.sok)
-
-  return (
-    <Layout>
-      <SEO title='Test' />
-      <Container>
-        <Search/>
-        <h1 className={responsiveTitle1}>Archive</h1>
-        {testNodes && testNodes.length > 0 && <ShowSearch nodes={testNodes}/>}
-      </Container>
-    </Layout>
-  )
-}
-
 export default Searchpage

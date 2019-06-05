@@ -7,7 +7,6 @@ import Container from '../components/container'
 import SEO from '../components/seo'
 import ShowSearch from '../components/Show-search'
 import Search from '../components/search'
-import Example from "../components/nySok"
 import {responsiveTitle1} from '../components/typography.module.css'
 
 export const query = graphql`
@@ -34,27 +33,28 @@ export const query = graphql`
 `
 
 
- //FIND UT HVORDAN MAN KAN PASE VALUE FRA INPUT I NYSOK TIL QUERY OG SØK ER FERDIG!
 
   const Searchpage = props => {
-    const { data, errors } = props
 
+    const { data, errors } = props
     if (errors) {
+
       return (
         <div>
           <GraphQLErrorList errors={errors}/>
         </div>
       )
     }
-    const testNodes = data && data.sok && mapEdgesToNodes(data.sok)
+    const allNodes = data && data.sok && mapEdgesToNodes(data.sok)
+    const [items, setItems] =  useState(allNodes)
 
     return (
       <Layout>
         <SEO title='Test'/>
         <Container>
-          <Search/>
+          <Search items={allNodes} onChange={setItems}/>
           <h1 className={responsiveTitle1}>Archive</h1>
-          {testNodes && testNodes.length > 0 && <ShowSearch nodes={testNodes}/>}
+          <ShowSearch nodes={items}/>
         </Container>
       </Layout>
     )

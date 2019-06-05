@@ -1,57 +1,36 @@
-import React, { Component } from 'react'
-import styles from './search.module.css'
-import styled from 'styled-components'
-import { H2 } from '../components/Title'
-import Wrapper from '../components/Wrapper'
-
-
-const Button = styled.button`
-background: ${props => props.primary ? "palevioletred" : "white"};
-color: ${props => props.primary ? "white" : "palevioletred"};
-
-font-size: 1em;
-padding: 0.25em 1em;
-border: 2px solid palevioletred;
-border-radius: 3px;
-`;
-const Input = styled.input`
-color: ${props => props.primary ? "white" : "palevioletred"};
-font-size: 1em;
-padding: 0.25em 1em;
-border: 2px solid palevioletred;
-border-radius: 3px;
-`;
+import React, { Component, createRef, useState, useEffect } from 'react'
+import styled, {ThemeProvider} from 'styled-components'
+import {StaccTheme as theme} from "@staccx/stacc-theme"
+import {useSearch, Wrapper, Input, Heading, Button} from "@staccx/base"
 
 
 
-class Search extends Component {
 
-  state = {
-    query: '',
-  }
+const Search = ({items, onChange = () => null}) => {
+const search = createRef()
 
-  handleInputChange = () => {
-    this.setState({
-      query: this.search.value
-    })
-  }
 
-  render() {
-    return (
+  const [input, setInput] = useState(null)
+  const [result] = useSearch({input, documents: items, keys: ["title"]})
 
+
+  useEffect(() => {
+    onChange(result)
+  }, [result])
+
+  return (
+<ThemeProvider theme={theme}>
       <Wrapper>
-        <H2>Search for your word here:</H2>
+        <Heading level={2}>Search for your word here:</Heading>
         <Input type="search"
                placeholder="search..."
-               className={styles.input}
-               ref={input => this.search = input}
-               onChange={this.handleInputChange}
+               ref={search}
+               onChange={e => setInput(e.target.value)}
         />
         <Button primary>Search</Button>
-        <p>{this.state.query}</p>
       </Wrapper>
+</ThemeProvider>
 
     )
   }
-}
 export default Search;

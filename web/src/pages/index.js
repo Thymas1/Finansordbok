@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { graphql } from 'gatsby'
 import {
   mapEdgesToNodes,
@@ -10,7 +10,9 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import { Title } from '../components/Title'
+import { Heading } from '@staccx/base'
+import Search from '../components/search'
+import ShowSearch from "../components/Show-search";
 
 
 export const query = graphql`
@@ -83,12 +85,8 @@ const IndexPage = props => {
       .filter(filterOutDocsWithoutSlugs)
       .filter(filterOutDocsPublishedInTheFuture)
     : []
+  const [items, setItems] =  useState(postNodes)
 
-  if (!site) {
-    throw new Error(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
-    )
-  }
 
   return (
     <Layout>
@@ -98,12 +96,13 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <Container>
-        <Title>Welcome to {site.title}</Title>
+        <Heading level={1}> Welcome to {site.title}</Heading>
+        <Search items={postNodes} onChange={setItems}/>
         {postNodes && (
           <BlogPostPreviewList
             title="Latest added words"
-            nodes={postNodes}
-            browseMoreHref="/archive/"
+            nodes={items}
+            browseMoreHref="/search/"
           />
         )}
       </Container>

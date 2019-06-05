@@ -3,11 +3,11 @@ import {graphql} from 'gatsby'
 import {mapEdgesToNodes} from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
 import Layout from '../containers/layout'
-import Container from '../components/container'
 import SEO from '../components/seo'
 import ShowSearch from '../components/Show-search'
 import Search from '../components/search'
-import {responsiveTitle1} from '../components/typography.module.css'
+import { Heading } from '@staccx/base'
+
 
 export const query = graphql`
   query SearchQuery {
@@ -50,12 +50,12 @@ export const query = graphql`
 
     return (
       <Layout>
-        <SEO title='Test'/>
-        <Container>
+        <SEO title='Search'/>
+        <div>
           <Search items={allNodes} onChange={setItems}/>
-          <h1 className={responsiveTitle1}>Archive</h1>
+          <Heading level={1}>All Words</Heading>
           <ShowSearch nodes={items}/>
-        </Container>
+        </div>
       </Layout>
     )
   }

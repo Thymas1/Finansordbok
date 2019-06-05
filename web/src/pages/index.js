@@ -1,16 +1,13 @@
 import React, {useState} from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
   filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
-import BlogPostPreviewList from '../components/blog-post-preview-list'
-import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
-import Layout from '../containers/layout'
-import { Heading } from '@staccx/base'
+import { Heading, Layout } from '@staccx/base'
 import Search from '../components/search'
 import ShowSearch from "../components/Show-search";
 
@@ -95,17 +92,13 @@ const IndexPage = props => {
         description={site.description}
         keywords={site.keywords}
       />
-      <Container>
+      <div>
         <Heading level={1}> Welcome to {site.title}</Heading>
         <Search items={postNodes} onChange={setItems}/>
-        {postNodes && (
-          <BlogPostPreviewList
-            title="Latest added words"
-            nodes={items}
-            browseMoreHref="/search/"
-          />
-        )}
-      </Container>
+        <ShowSearch nodes={items}/>
+        <Link to={"/search"}> See more </Link>
+      </div>
+
     </Layout>
   )
 }

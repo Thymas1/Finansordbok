@@ -21,7 +21,7 @@ const search = createRef()
   return (
 <ThemeProvider theme={theme}>
       <Wrapper>
-        <Heading level={2}>Search for your word here:</Heading>
+        <Heading level={3}>Search here:</Heading>
         <Input type="search"
                placeholder="search..."
                ref={search}

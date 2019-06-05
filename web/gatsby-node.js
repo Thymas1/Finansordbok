@@ -38,11 +38,11 @@ async function createBlogPostPages (graphql, actions, reporter) {
       const dateSegment = format(publishedAt, 'YYYY/MM')
       const path = `/blog/${dateSegment}/${slug.current}/`
 
-      reporter.info(`Creating blog post page: ${path}`)
+      reporter.info(`Creating word page: ${path}`)
 
       createPage({
         path,
-        component: require.resolve('./src/templates/blog-post.js'),
+        component: require.resolve('./src/templates/search-post'),
         context: { id }
       })
 
@@ -85,7 +85,7 @@ async function createSearchPages (graphql, actions, reporter) {
 
       createPage({
         path,
-        component: require.resolve('./src/templates/blog-post.js'),
+        component: require.resolve('./src/templates/search-post'),
         context: { id }
       })
 

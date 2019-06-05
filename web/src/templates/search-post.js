@@ -1,8 +1,8 @@
 import React from 'react'
 import {graphql} from 'gatsby'
-import Container from '../components/container'
+
 import GraphQLErrorList from '../components/graphql-error-list'
-import BlogPost from '../components/blog-post'
+import BlogPost from '../components/word-page'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
@@ -38,9 +38,9 @@ const EntryTemplate = props => {
       {post && <SEO title={post.title || 'Untitled'} />}
 
       {errors && (
-        <Container>
+        <div>
           <GraphQLErrorList errors={errors} />
-        </Container>
+        </div>
       )}
 
       {post && <BlogPost {...post} />}

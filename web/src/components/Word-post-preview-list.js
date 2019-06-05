@@ -1,6 +1,6 @@
 import {Link} from 'gatsby'
 import React from 'react'
-import BlogPostPreview from './blog-post-preview'
+import WordPostPreview from './word-post-preview'
 
 import styles from './blog-post-preview-list.module.css'
 
@@ -12,7 +12,7 @@ function BlogPostPreviewGrid (props) {
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
-              <BlogPostPreview {...node} isInList />
+              <WordPostPreview {...node} isInList />
             </li>
           ))}
       </ul>

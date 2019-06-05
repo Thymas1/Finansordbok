@@ -3,16 +3,16 @@ import React from 'react'
 import {buildImageObj} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
-import Container from './container'
 
-import styles from './blog-post.module.css'
+
+
 
 function BlogPost (props) {
-  const {_rawBody, authors, categories, title, mainImage, publishedAt} = props
+  const {_rawBody, categories, title, mainImage, publishedAt} = props
   return (
-    <article className={styles.root}>
+    <article>
       {mainImage && mainImage.asset && (
-        <div className={styles.mainImage}>
+        <div>
           <img
             src={imageUrlFor(buildImageObj(mainImage))
               .width(1200)
@@ -23,15 +23,15 @@ function BlogPost (props) {
           />
         </div>
       )}
-      <Container>
-        <div className={styles.grid}>
-          <div className={styles.mainContent}>
-            <h1 className={styles.title}>{title}</h1>
+      <div>
+        <div>
+          <div>
+            <h1>{title}</h1>
             {_rawBody && <PortableText blocks={_rawBody} />}
           </div>
-          <aside className={styles.metaContent}>
+          <aside>
             {publishedAt && (
-              <div className={styles.publishedAt}>
+              <div>
                 <p>Published:</p>
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
                   ? distanceInWords(new Date(publishedAt), new Date())
@@ -39,8 +39,8 @@ function BlogPost (props) {
               </div>
             )}
             {categories && (
-              <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
+              <div>
+                <h3>Categories</h3>
                 <ul>
                   {categories.map(category => (
                     <li key={category._id}>{category.title}</li>
@@ -50,7 +50,7 @@ function BlogPost (props) {
             )}
           </aside>
         </div>
-      </Container>
+      </div>
     </article>
   )
 }

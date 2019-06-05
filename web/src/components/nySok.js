@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import {graphql} from 'gatsby'
+import ShowSearch from './Show-search'
+import {mapEdgesToNodes} from '../lib/helpers'
+
+
 
 
 
@@ -8,39 +12,17 @@ import {graphql} from 'gatsby'
 import {responsiveTitle1} from '../components/typography.module.css'
 
 
-export const query = graphql`
-  query iSearchQuery {
-  sok: allSanityPost(filter: {
-    title:{ eq: "JTTA"}
-  }) {
-      edges {
-        node {
-          id
-          publishedAt
-          mainImage {
-            ...SanityImage
-            alt
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
-    }
-  }
-
-`
-
 
 
 
   function Example() {
 
     const [form, setValues] = useState({
-      title: 'JTTA'
+      title: '',
     });
+    const [data, setData] = useState();
+
+
 
     const printValues = e => {
       e.preventDefault();
@@ -53,19 +35,21 @@ export const query = graphql`
       });
     };
 
-
     return (
+      <div>
       <form onSubmit={printValues}>
         <label>Søk:
           <input value={form.title}
                  name="title"
                  onChange={updateField}
+                 placeholder="Search..."
                  />
         </label>
       <br />
         <button>Submit</button>
         <p>{form.title}</p>
       </form>
+      </div>
     );
 
   }

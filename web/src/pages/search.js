@@ -8,19 +8,11 @@ import SEO from '../components/seo'
 import ShowSearch from '../components/Show-search'
 import Search from '../components/search'
 import Example from "../components/nySok"
-
-
-
-
-
 import {responsiveTitle1} from '../components/typography.module.css'
-
 
 export const query = graphql`
   query SearchQuery {
-  sok: allSanityPost(filter: {
-    title:{ eq: "PEP"}
-  }) {
+  sok: allSanityPost {
       edges {
         node {
           id
@@ -61,7 +53,6 @@ export const query = graphql`
         <SEO title='Test'/>
         <Container>
           <Search/>
-          <Example/>
           <h1 className={responsiveTitle1}>Archive</h1>
           {testNodes && testNodes.length > 0 && <ShowSearch nodes={testNodes}/>}
         </Container>

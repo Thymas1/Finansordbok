@@ -50,6 +50,50 @@ async function createBlogPostPages (graphql, actions, reporter) {
     })
 }
 
+async function createSearchPages (graphql, actions, reporter) {
+  const { createPage, createPageDependency } = actions
+
+  const result = await graphql(`
+    {
+      allSanityPost(
+        filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      ) {
+        edges {
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) throw result.errors
+
+  const postEdges = (result.data.allSanityPost || {}).edges || []
+
+  postEdges
+    .filter(edge => !isFuture(edge.node.publishedAt))
+    .forEach((edge, index) => {
+      const { id, slug = {} } = edge.node
+      const path = `/search/${slug.current}/`
+
+      reporter.info(`Creating search page: ${path}`)
+
+      createPage({
+        path,
+        component: require.resolve('./src/templates/blog-post.js'),
+        context: { id }
+      })
+
+      createPageDependency({ path, nodeId: id })
+    })
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPostPages(graphql, actions, reporter)
+  await createSearchPages(graphql, actions, reporter)
 }

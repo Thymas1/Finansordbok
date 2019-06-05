@@ -1,10 +1,10 @@
 import React from 'react'
-import {graphql} from 'gatsby'
+import {graphql, Link} from 'gatsby'
 
 import GraphQLErrorList from '../components/graphql-error-list'
 import BlogPost from '../components/word-page'
 import SEO from '../components/seo'
-import Layout from '../containers/layout'
+import {Layout, LayoutItem,} from '@staccx/base'
 
 export const query = graphql`
   query EntryTemplateQuery($id: String!) {
@@ -33,7 +33,9 @@ const EntryTemplate = props => {
   const {data, errors} = props
   const post = data && data.post
   return (
-    <Layout>
+    <Layout grid={"columns"}>
+      <LayoutItem area={"main"}>
+        <Link to={"/"}>The financial dictionary </Link>
       {errors && <SEO title='GraphQL Error' />}
       {post && <SEO title={post.title || 'Untitled'} />}
 
@@ -44,6 +46,7 @@ const EntryTemplate = props => {
       )}
 
       {post && <BlogPost {...post} />}
+      </LayoutItem>
     </Layout>
   )
 }

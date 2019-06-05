@@ -1,13 +1,15 @@
 import React, {useState} from 'react'
 import { graphql, Link } from 'gatsby'
+import styled, {ThemeProvider, css} from 'styled-components'
+import {StaccTheme as theme} from "@staccx/stacc-theme"
+import { Heading, Layout, theming, GlobalStyle } from '@staccx/base'
 import {
-  mapEdgesToNodes,
-  filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
+mapEdgesToNodes,
+filterOutDocsWithoutSlugs,
+filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
-import { Heading, Layout } from '@staccx/base'
 import Search from '../components/search'
 import ShowSearch from "../components/Show-search";
 
@@ -42,7 +44,6 @@ export const query = graphql`
       keywords
     }
     posts: allSanityPost(
-      limit: 6
       sort: { fields: [publishedAt], order: DESC }
       filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
@@ -85,7 +86,20 @@ const IndexPage = props => {
   const [items, setItems] =  useState(postNodes)
 
 
+
+  const test = theme.add(theming.createVariants({
+    threeByThree: css`
+    display: grid;
+    grid-template-columns: .8fr .8fr .8fr;
+    list-style: none;
+    padding: 2%;
+    overflow-x:hidden;
+    `
+  }, Layout.themeProps.container))
   return (
+    <ThemeProvider theme={test}>
+<>
+  <GlobalStyle/>
     <Layout>
       <SEO
         title={site.title}
@@ -93,13 +107,16 @@ const IndexPage = props => {
         keywords={site.keywords}
       />
       <div>
-        <Heading level={1}> Welcome to {site.title}</Heading>
+        <Heading level={1} variant={"title"}> Welcome to {site.title}</Heading>
         <Search items={postNodes} onChange={setItems}/>
         <ShowSearch nodes={items}/>
         <Link to={"/search"}> See more </Link>
       </div>
 
     </Layout>
+  </>
+    </ThemeProvider>
+
   )
 }
 

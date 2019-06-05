@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
-import {graphql} from 'gatsby'
+import {graphql, Link} from 'gatsby'
 import {mapEdgesToNodes} from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
-import Layout from '../containers/layout'
-import SEO from '../components/seo'
+
 import ShowSearch from '../components/Show-search'
 import Search from '../components/search'
-import { Heading } from '@staccx/base'
+import { Heading, Layout } from '@staccx/base'
+import styled, {ThemeProvider, css} from 'styled-components'
+import {StaccTheme as theme} from "@staccx/stacc-theme"
+import { theming} from "@staccx/base/";
+
 
 
 export const query = graphql`
@@ -31,6 +34,15 @@ export const query = graphql`
   }
   
 `
+const test = theme.add(theming.createVariants({
+  threeByThree: css`
+    display: grid;
+    grid-template-columns: .8fr .8fr .8fr;
+    list-style: none;
+    padding: 2%;
+
+    `,
+}, Layout.themeProps.container))
 
 
 
@@ -49,14 +61,16 @@ export const query = graphql`
     const [items, setItems] =  useState(allNodes)
 
     return (
+      <ThemeProvider theme={test} >
       <Layout>
-        <SEO title='Search'/>
         <div>
+          <Heading level={1}>The financial dictionary</Heading>
           <Search items={allNodes} onChange={setItems}/>
           <Heading level={1}>All Words</Heading>
           <ShowSearch nodes={items}/>
         </div>
       </Layout>
+      </ThemeProvider>
     )
   }
 export default Searchpage

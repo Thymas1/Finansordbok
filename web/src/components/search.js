@@ -1,6 +1,5 @@
 import React, { Component, createRef, useState, useEffect } from 'react'
-import styled, {ThemeProvider} from 'styled-components'
-import {StaccTheme as theme} from "@staccx/stacc-theme"
+
 import {useSearch, Wrapper, Input, Heading, Button} from "@staccx/base"
 
 
@@ -19,7 +18,6 @@ const search = createRef()
   }, [result])
 
   return (
-<ThemeProvider theme={theme}>
       <Wrapper>
         <Heading level={3}>Search here:</Heading>
         <Input type="search"
@@ -29,7 +27,6 @@ const search = createRef()
         />
         <Button primary>Search</Button>
       </Wrapper>
-</ThemeProvider>
 
     )
   }

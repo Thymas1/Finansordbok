@@ -8,7 +8,7 @@ import Search from '../components/search'
 import { Heading, Layout } from '@staccx/base'
 import styled, {ThemeProvider, css} from 'styled-components'
 import {StaccTheme as theme} from "@staccx/stacc-theme"
-import { theming} from "@staccx/base/";
+import { theming, GlobalStyle} from "@staccx/base/";
 
 
 
@@ -62,14 +62,18 @@ const test = theme.add(theming.createVariants({
 
     return (
       <ThemeProvider theme={test} >
-      <Layout>
+
+        <>
+          <GlobalStyle/>
+        <Layout>
         <div>
-          <Heading level={1}>The financial dictionary</Heading>
+          <Heading level={1}><Link to={"/"}>The financial dictionary</Link></Heading>
           <Search items={allNodes} onChange={setItems}/>
-          <Heading level={1}>All Words</Heading>
+          <Heading level={2}>All Words</Heading>
           <ShowSearch nodes={items}/>
         </div>
       </Layout>
+      </>
       </ThemeProvider>
     )
   }

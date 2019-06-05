@@ -1,4 +1,5 @@
 import {format, distanceInWords, differenceInDays} from 'date-fns'
+import { Heading} from '@staccx/base'
 import React from 'react'
 import {buildImageObj} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
@@ -7,16 +8,19 @@ import PortableText from './portableText'
 
 
 
+
+
 function BlogPost (props) {
   const {_rawBody, categories, title, mainImage, publishedAt} = props
   return (
+
     <article>
       {mainImage && mainImage.asset && (
         <div>
           <img
             src={imageUrlFor(buildImageObj(mainImage))
               .width(1200)
-              .height(Math.floor((9 / 16) * 1200))
+              .height(Math.floor((9 / 21) * 1200))
               .fit('crop')
               .url()}
             alt={mainImage.alt}
@@ -26,7 +30,7 @@ function BlogPost (props) {
       <div>
         <div>
           <div>
-            <h1>{title}</h1>
+            <Heading level={1}>{title}</Heading>
             {_rawBody && <PortableText blocks={_rawBody} />}
           </div>
           <aside>
@@ -40,7 +44,7 @@ function BlogPost (props) {
             )}
             {categories && (
               <div>
-                <h3>Categories</h3>
+                <Heading level={3}>Categories</Heading>
                 <ul>
                   {categories.map(category => (
                     <li key={category._id}>{category.title}</li>
@@ -52,6 +56,7 @@ function BlogPost (props) {
         </div>
       </div>
     </article>
+
   )
 }
 

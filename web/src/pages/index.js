@@ -9,7 +9,7 @@ filterOutDocsWithoutSlugs,
 filterOutDocsPublishedInTheFuture
 } from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
-import SEO from '../components/seo'
+
 import Search from '../components/search'
 import ShowSearch from "../components/Show-search";
 
@@ -101,18 +101,12 @@ const IndexPage = props => {
 <>
   <GlobalStyle/>
     <Layout>
-      <SEO
-        title={site.title}
-        description={site.description}
-        keywords={site.keywords}
-      />
       <div>
-        <Heading level={1} variant={"title"}> Welcome to {site.title}</Heading>
+        <Heading level={1}> Welcome to {site.title}</Heading>
         <Search items={postNodes} onChange={setItems}/>
         <ShowSearch nodes={items}/>
         <Link to={"/search"}> See more </Link>
       </div>
-
     </Layout>
   </>
     </ThemeProvider>
